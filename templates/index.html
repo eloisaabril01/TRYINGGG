@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav AI Humanizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nav AI Humanizer</h1>
+        <div class="text-areas">
+            <div class="text-box">
+                <div class="action-bar">
+                    <button class="action-btn" id="paste-btn">Paste</button>
+                </div>
+                <textarea id="input-text" placeholder="Enter your text here..." spellcheck="true"></textarea>
+                <div class="word-count">0 words</div>
+                <div class="ai-score-input">
+                    <div class="score-meter">
+                        <div class="meter">
+                            <div class="meter-fill" id="input-meter"></div>
+                        </div>
+                        <div class="score-value" id="input-score">0%</div>
+                        <div class="score-subtitle">AI Detection Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-section">
+                <button id="humanize-btn" data-loading="false">
+                    Humanize
+                </button>
+            </div>
+
+            <div class="text-box">
+                <div class="action-bar">
+                    <button class="action-btn" id="copy-btn">Copy</button>
+                </div>
+                <div id="output-text" class="output-area">Your humanized text will appear here...</div>
+                <div class="word-count" id="humanized-count">0 words</div>
+                <div class="ai-score">
+                    <div class="score-label" id="score-label">Your Text is Human written</div>
+                    <div class="score-meter">
+                        <div class="meter">
+                            <div class="meter-fill" id="meter-fill"></div>
+                        </div>
+                        <div class="score-value" id="ai-score">0%</div>
+                        <div class="score-subtitle">AI GPT*</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/detector.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav AI Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav">
+            <a href="/" class="nav-link">Humanizer</a>
+            <a href="/detect" class="nav-link active">AI Detector</a>
+        </nav>
+        <h1>Nav AI Detector</h1>
+        <div class="detector-container">
+            <div class="text-box full-width">
+                <textarea id="detect-text" placeholder="Paste your text here to check if it's AI generated..." spellcheck="true"></textarea>
+                <div class="word-count">0 words</div>
+            </div>
+
+            <button id="detect-btn">Analyze Text</button>
+
+            <div class="result-card" id="result-card" style="display: none;">
+                <div class="score-label" id="detect-label">Analyzing...</div>
+                <div class="score-meter large">
+                    <div class="meter">
+                        <div class="meter-fill" id="detect-meter"></div>
+                    </div>
+                    <div class="score-value" id="detect-score">0%</div>
+                    <div class="score-subtitle">AI Detection Score</div>
+                </div>
+                <div class="detection-details" id="detection-details"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/detector.js"></script>
+</body>
+</html>
