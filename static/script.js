@@ -96,16 +96,19 @@ document.getElementById('humanize-btn').addEventListener('click', async () => {
             const meterFill = document.getElementById('meter-fill');
 
             meterFill.style.width = `${aiScore}%`;
-            scoreValue.textContent = aiScore <= 15 ? '0%' : `${aiScore}%`;
+            scoreValue.textContent = `${aiScore}%`;
 
             if (aiScore <= 15) {
                 scoreLabel.textContent = 'Your Text is Human written';
                 scoreLabel.style.color = '#4CAF50';
                 scoreValue.style.color = '#4CAF50';
+                meterFill.style.background = 'linear-gradient(90deg, #4CAF50, #4CAF50)';
             } else {
                 scoreLabel.textContent = 'Your Text is AI/GPT Generated';
-                scoreLabel.style.color = aiScore > 60 ? '#FF5722' : '#FFC107';
-                scoreValue.style.color = aiScore > 60 ? '#FF5722' : '#FFC107';
+                const color = aiScore > 60 ? '#FF5722' : '#FFC107';
+                scoreLabel.style.color = color;
+                scoreValue.style.color = color;
+                meterFill.style.background = `linear-gradient(90deg, ${color}, ${color})`;
             }
         }, 200);
     } catch (error) {
