@@ -3,16 +3,6 @@ document.getElementById('input-text').addEventListener('input', function() {
     const text = this.value;
     const wordCount = text.trim().split(/\s+/).filter(word => word.length > 0).length;
     this.parentElement.querySelector('.word-count').textContent = `${wordCount} words`;
-
-    // Update AI detection score for input
-    if (text.trim()) {
-        const score = calculateAIScore(text);
-        document.getElementById('input-meter').style.width = `${score}%`;
-        document.getElementById('input-score').textContent = `${score}%`;
-    } else {
-        document.getElementById('input-meter').style.width = '0%';
-        document.getElementById('input-score').textContent = '0%';
-    }
 });
 
 // Copy button functionality

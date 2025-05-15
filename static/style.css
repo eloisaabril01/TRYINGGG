@@ -79,6 +79,22 @@ h1 {
     gap: 20px;
 }
 
+.center-detector {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.center-detector .score-label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
 .ai-score {
     background: var(--bg-light);
     padding: 20px;
