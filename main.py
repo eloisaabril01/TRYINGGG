@@ -17,15 +17,37 @@ def humanize(text):
     text = text.replace("i would", "i think")
     text = text.replace(".", "... ")
     text = text.replace(",", " and")
-
+    
+    casual_starters = [
+        "basically", "honestly", "i think", "from what i understand",
+        "as far as i know", "in my opinion", "you see", "like",
+        "the thing is", "i mean", "so basically", "i believe"
+    ]
+    
+    fillers = [
+        "kind of", "sort of", "pretty much", "you know",
+        "like", "actually", "basically", "probably"
+    ]
+    
     sentences = text.split(". ")
     humanized = []
+    
     for sentence in sentences:
         if not sentence.strip():
             continue
         sentence = sentence.strip()
-        if not sentence.startswith(("well", "hmm", "you know")):
-            sentence = "well, " + sentence
+        
+        # Add random starter if sentence doesn't already have one
+        if not any(sentence.startswith(starter) for starter in casual_starters):
+            sentence = random.choice(casual_starters) + ", " + sentence
+        
+        # Occasionally add filler words
+        if random.random() < 0.3:
+            words = sentence.split()
+            insert_pos = random.randint(2, len(words))
+            words.insert(insert_pos, random.choice(fillers))
+            sentence = " ".join(words)
+            
         humanized.append(sentence)
 
     return " ".join(humanized)
